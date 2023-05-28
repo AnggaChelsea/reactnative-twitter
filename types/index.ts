@@ -6,8 +6,14 @@ export type Users = {
 }
 
 export type TweetType = {
-    user: string,
-    image: string,
+    id: string,
+    user: Users,
     name: string,
-    content: string
+    createdAt: string,
+    content: string,
+    image?: string,
+    numberOfComments?:number,
+    numberOfRetweets?: number,
+    numberOfLikes?: number,
+    impressions?: number,
 }

@@ -16,6 +16,8 @@ const Tweet = ({tweet} : TweetProps) => {
      <View style={styles.mainContainer}>
      <Text style={styles.name}>{tweet.user.name}</Text>
      <Text>{tweet.content}</Text>
+
+     {tweet.image && <Image src={tweet.image} style={styles.image} />}
      </View>
     </View>
     )
@@ -37,6 +39,13 @@ const styles = StyleSheet.create({
     },
     name: {
       fontWeight: 'bold'
+    },
+    image:{
+        width: '100%',
+        height: 200,
+        aspectRatio: 12 / 9,
+        marginTop: 10,
+        borderRadius: 15
     }
    
   });
