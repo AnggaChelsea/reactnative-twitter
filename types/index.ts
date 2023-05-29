@@ -2,7 +2,7 @@ export type Users = {
     id: string,
     name: string,
     username: string,
-    image?: string,
+    image?: string | undefined,
 }
 
 export type TweetType = {
@@ -11,7 +11,7 @@ export type TweetType = {
     name: string,
     createdAt: string,
     content: string,
-    image?: string,
+    image?: string | undefined,
     numberOfComments?:number,
     numberOfRetweets?: number,
     numberOfLikes?: number,

@@ -1,7 +1,8 @@
-import { StyleSheet, Image, View, Text } from 'react-native'
+import { StyleSheet, Image, View, Text, Pressable } from 'react-native'
 import tweets from '../assets/data/tweets'
 import { TweetType } from '../types'
 import { Entypo, EvilIcons } from '@expo/vector-icons'; 
+import { Link } from 'expo-router';
 import IconButton from './IconsButton';
 const tweet: any = tweets[0]
 
@@ -15,8 +16,12 @@ type Icons = {
 
 const Tweet = ({ tweet }: TweetProps, {icon}: Icons) => {
   // const tweet = props.tweet
+  // const onPress = () => {
+  //   console.warn("onPress")
+  // }
   return (
-    <View style={styles.container}>
+      <Link href={`/tweet/${tweet.id}`} asChild>
+    <Pressable style={styles.container}>
       <Image src={tweet.user.image} style={styles.userImage} />
       <View style={styles.mainContainer}>
         <View style={{ flexDirection: 'row' }}>
@@ -37,7 +42,8 @@ const Tweet = ({ tweet }: TweetProps, {icon}: Icons) => {
            <IconButton icon='share-apple' />
         </View>
       </View>
-    </View>
+    </Pressable>
+      </Link>
   )
 }
 
