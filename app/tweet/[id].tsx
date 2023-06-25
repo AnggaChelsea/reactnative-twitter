@@ -1,7 +1,7 @@
 import { useSearchParams } from "expo-router"
 import tweets from "../../assets/data/tweets"
 import Tweet from "../../components/Tweet"
-import { Text } from "../../components/Themed"
+import { Text, View } from "../../components/Themed"
 
 export default function TweetScreen() {
     const {id} = useSearchParams()
@@ -14,7 +14,17 @@ export default function TweetScreen() {
             </Text>
         )
     }
-    return <Tweet tweet={tweet} />
+    return (
+        <View style={styles.container}>
+            <Tweet tweet={tweet} />
+        </View>
+    )
     
+}
+
+const styles = {
+    container: {
+        flex: 1,
+    },
 }
 

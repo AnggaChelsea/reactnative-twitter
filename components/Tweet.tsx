@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: 'lightgrey',
     backgroundColor: 'white',
+    flex:1
   },
   userImage: { 
     width: 50, 
